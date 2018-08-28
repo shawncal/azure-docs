@@ -96,8 +96,14 @@ Create a certificate chain from the owner CA certificate, intermediate certifica
    * Device CA certificate -  `$WRKDIR/certs/new-edge-device-full-chain.cert.pem`
    * Device CA private key - `$WRKDIR/private/new-edge-device.key.pem`
    * Owner CA - `$WRKDIR/certs/azure-iot-test-only.root.ca.cert.pem`
+   
+2. Open the IoT Edge configuration file. It is a protected file so you may have to use elevated privileges to access it.
+   
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
+   ```
 
-2.	Set the `certificate` properties in the Security Daemon config yaml file to the path where you placed the certificate and key files.
+3.	Set the `certificate` properties in the Iot Edge Daemon configuration yaml file to the path where you placed the certificate and key files.
 
 ```yaml
 certificates:
